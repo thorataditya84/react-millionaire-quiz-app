@@ -200,7 +200,7 @@ function App() {
                         <div className="main">
                             {
                                 (timeOut) ? (
-                                    <h1 className="endText">{username}, you earned: {earned}</h1>
+                                    <h1 className="endText">Time's up {username}. You earned: {earned}</h1>
                                 ) : (
                                     questionNumber === 16 ? (
                                         <h1 className="endText">Congratulations {username}, you are a Millionaire!</h1>
