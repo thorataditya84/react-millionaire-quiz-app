@@ -1,5 +1,6 @@
 import "./app.css";
 import { useEffect, useMemo, useState } from "react";
+import jsonData from "./data.json";
 import Start from "./components/Start";
 import Timer from "./components/Timer";
 import Questions from "./components/Questions";
@@ -11,6 +12,9 @@ function App() {
     const [questionNumber, setQuestionNumber] = useState(1);
     const [earned, setEarned] = useState("$ 0");
 
+    const data = jsonData.data;
+
+/*
     const data = [
         {
             id: 1,
@@ -20,7 +24,7 @@ function App() {
                 {text: "Watches", correct: true},
                 {text: "Food", correct: false},
                 {text: "Cosmetic", correct: false}
-            ],
+            ]
         },
         {
             id: 2,
@@ -30,7 +34,7 @@ function App() {
                 {text: "30 meters", correct: false},
                 {text: "22 yards", correct: true},
                 {text: "22 meters", correct: false}
-            ],
+            ]
         },
         {
             id: 3,
@@ -40,7 +44,7 @@ function App() {
                 {text: "Chaitra", correct: true},
                 {text: "Ashadha", correct: false},
                 {text: "Vaishakha", correct: false}
-            ],
+            ]
         },
         {
             id: 4,
@@ -50,7 +54,7 @@ function App() {
                 {text: "Tail", correct: true},
                 {text: "Claw", correct: false},
                 {text: "Leg", correct: false}
-            ],
+            ]
         },
         {
             id: 5,
@@ -60,7 +64,7 @@ function App() {
                 {text: "Hindi", correct: false},
                 {text: "Malayalam", correct: true},
                 {text: "Telugu", correct: false}
-            ],
+            ]
         },
         {
             id: 6,
@@ -70,7 +74,7 @@ function App() {
                 {text: "Prayag. Haridwar, Ujjain,. Nasik", correct: true},
                 {text: "Rameshwaram. Purl, Badrinath. Dwarika", correct: false},
                 {text: "Chittakoot, Ujjain, Prayag,'Haridwar", correct: false}
-            ],
+            ]
         },
         {
             id: 7,
@@ -80,7 +84,7 @@ function App() {
                 {text: "Karnataka", correct: false},
                 {text: "Tamil Nadu", correct: true},
                 {text: "Andhra Pradesh", correct: false}
-            ],
+            ]
         },
         {
             id: 8,
@@ -90,7 +94,7 @@ function App() {
                 {text: "Leonardo Di Caprio", correct: false},
                 {text: "Denzel Washington", correct: false},
                 {text: "Daniel Redcliffe", correct: true}
-            ],
+            ]
         },
         {
             id: 9,
@@ -100,7 +104,7 @@ function App() {
                 {text: "Mughal", correct: false},
                 {text: "Chera", correct: false},
                 {text: "Pandya", correct: false}
-            ],
+            ]
         },
         {
             id: 10,
@@ -110,7 +114,7 @@ function App() {
                 {text: "Impost", correct: false},
                 {text: "Lodestone", correct: false},
                 {text: "Keystone", correct: true}
-            ],
+            ]
         },
         {
             id: 11,
@@ -120,7 +124,7 @@ function App() {
                 {text: "Nanda", correct: false},
                 {text: "Asoka", correct: false},
                 {text: "Raksas", correct: true}
-            ],
+            ]
         },
         {
             id: 4,
@@ -130,7 +134,7 @@ function App() {
                 {text: "Dr Fakhruddin Ali Ahmed", correct: false},
                 {text: "Dr Zakir Hussain", correct: false},
                 {text: "Giani Zail Singh", correct: false}
-            ],
+            ]
         },
         {
             id: 13,
@@ -140,7 +144,7 @@ function App() {
                 {text: "2005", correct: false},
                 {text: "2006", correct: false},
                 {text: "2007", correct: false}
-            ],
+            ]
         },
         {
             id: 14,
@@ -150,7 +154,7 @@ function App() {
                 {text: "Deshbandhu", correct: true},
                 {text: "Purush", correct: false},
                 {text: "Lokmanya", correct: false}
-            ],
+            ]
         },
         {
             id: 4,
@@ -163,7 +167,7 @@ function App() {
             ]
         }
     ];
-
+*/
     const moneyPyramid = useMemo (
         () => [
             { id: 1, amount: "$ 100" },
@@ -200,7 +204,7 @@ function App() {
                         <div className="main">
                             {
                                 (timeOut) ? (
-                                    <h1 className="endText">Time's up {username}. You earned: {earned}</h1>
+                                    <h1 className="endText">That was close! {username}, You earned: {earned}</h1>
                                 ) : (
                                     questionNumber === 16 ? (
                                         <h1 className="endText">Congratulations {username}, you are a Millionaire!</h1>
