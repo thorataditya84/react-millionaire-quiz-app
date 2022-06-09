@@ -3,47 +3,45 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
 }
 
 .question {
     width: 80%;
     background: linear-gradient(#100241, black);
-    border: 2px solid white;
     text-align: center;
     padding: 20px;
     border-radius: 10px;
+    border: 2px solid white;
     font-size: 20px;
-    margin: 0;
-    margin-bottom: 50px;
 }
 
-.options {
+.answers {
     width: 100%;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
 }
 
-.option {
+.answer {
     width: 40%;
     padding: 10px;
+    margin: 0 10px 20px 10px;
     text-align: center;
     background: linear-gradient(#0e0124, #22074d);
     border: 1px solid white;
     border-radius: 15px;
-    font-size: 20px;
     font-weight: 300;
-    margin: 0 10px 20px 10px;
+    font-size: 20px;
     cursor: pointer;
 }
 
-.option:hover,
-.option.active {
+.answer:hover,
+.answer.active {
     background: mediumblue;
 }
 
-.option.correct {
+.answer.correct {
     animation: correct 3s ease forwards;
 }
 
@@ -67,7 +65,7 @@
     }
 }
 
-.option.wrong {
+.answer.wrong {
     animation: wrong 3s ease forwards;
 }
 
